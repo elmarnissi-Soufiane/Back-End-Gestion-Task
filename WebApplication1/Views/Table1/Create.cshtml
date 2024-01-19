@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WebApplication1.Models.projet>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Proprie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TypeP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Progression)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Proprie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TypeP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Progression)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.IdP }) |
+                @Html.ActionLink("Details", "Details", new { id = item.IdP }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.IdP })
+            </td>
+        </tr>
+    }
+
+</table>

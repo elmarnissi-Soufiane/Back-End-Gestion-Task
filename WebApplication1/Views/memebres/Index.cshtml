@@ -1,0 +1,70 @@
+﻿@model IEnumerable<WebApplication1.Models.memebre>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-lg-3 col-sm-6 col-12 mt-sm-0 mt-2" style="margin-left: 750px;">
+        <button class="btn bg-gradient-info w-80 mb-0 toast-btn" type="button" data-target="infoToast">
+            <i class="material-icons opacity-10">add</i>
+            @Html.ActionLink("Nouveau", "Create")
+        </button>
+    </div>
+</div>
+<div class="container-fluid py-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="card my-4">
+                <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                    <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                        <h6 class="text-white text-capitalize ps-3">memebres</h6>
+                    </div>
+                    <table class="table align-items-center justify-content-center mb-0">
+                        <thead>
+                            <tr>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">identité</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Html.DisplayNameFor(model => model.Nom)</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Html.DisplayNameFor(model => model.Prenom)</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">@Html.DisplayNameFor(model => model.Email)</th>
+                                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Numero</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2">
+                                            <div class="my-auto">
+                                                <h6 class="mb-0 text-sm">@Html.DisplayFor(modelItem => item.IdM)</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <p class="text-sm font-weight-bold mb-0">@Html.DisplayFor(modelItem => item.Nom)</p>
+                                    </td>
+                                    <td>
+                                        <p class="text-sm font-weight-bold mb-0">@Html.DisplayFor(modelItem => item.Prenom)</p>
+                                    </td>
+                                    <td>
+                                        <span class="text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.Email)</span>
+                                    </td>
+                                    <td style="padding-left: 10px;">
+                                        <span class="text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.Num)</span>
+                                    </td>
+                                    <td class="align-middle">
+                                        <button class="btn bg-gradient-success w-50 mb-0 toast-btn" type="button" data-target="successToast"><i class="fas fa-edit"></i>@Html.ActionLink(" Modifier", "Edit", new { id = item.IdM })</button>
+                                        <button class="btn bg-gradient-danger w-50 mb-0 toast-btn" type="button" data-target="successToast"><i class="fas fa-trash-alt"></i>@Html.ActionLink(" Supprimer", "Delete", new { id = item.IdM })</button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

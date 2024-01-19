@@ -1,0 +1,79 @@
+﻿@model IEnumerable<WebApplication1.Models.projet>
+
+@{
+    ViewBag.Title = "Index";
+}
+    <div class="row">
+        <div class="col-lg-3 col-sm-6 col-12 mt-sm-0 mt-2" style="margin-left: 750px;">
+            <button class="btn bg-gradient-info w-80 mb-0 toast-btn" type="button" data-target="infoToast">
+                <i class="material-icons opacity-10">add</i>
+                @Html.ActionLink("Nouveau", "Create")
+            </button>
+        </div>
+    </div>
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-12">
+                <div class="card my-4">
+                    <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
+                        <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+                            <h6 class="text-white text-capitalize ps-3" style="position:center">Projets</h6>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="table-responsive p-0">
+                            <table class="table align-items-center justify-content-center mb-0">
+                                <thead>
+                                    <tr>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">@Html.DisplayNameFor(model => model.Titre)</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">propriétaire</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Type de Projet</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Date fin</th>
+                                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder text-center opacity-7 ps-2">Progression</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex px-2">
+                                                    <div class="my-auto">
+                                                        <h6 class="mb-0 text-sm">@Html.DisplayFor(modelItem => item.Titre)</h6>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <p class="text-sm font-weight-bold mb-0">@Html.DisplayFor(modelItem => item.Proprie) </p>
+                                            </td>
+                                            <td>
+                                                <span class="text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.TypeP)</span>
+                                            </td>
+                                            <td style="padding-left: 0px;">
+                                                <span class="text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.FormattedDateL)</span>
+                                            </td>
+                                            <td class="align-middle text-center">
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <span class="me-2 text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.Progression)%</span>
+                                                    <div>
+                                                        <div class="progress">
+                                                            <div class="progress-bar bg-gradient-info" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: @Html.DisplayFor(modelItem => item.Progression)%;"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="align-middle">
+                                                <button class="btn bg-gradient-success w-50 mb-0 toast-btn" type="button" data-target="successToast"><i class="fas fa-edit"></i>@Html.ActionLink("  Modifier", "Edit", new { id = item.IdP })</button>
+                                                <button class="btn bg-gradient-danger w-50 mb-0 toast-btn" type="button" data-target="successToast"><i class="fas fa-trash-alt"></i>@Html.ActionLink(" Supprimer", "Delete", new { id = item.IdP })</button>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>

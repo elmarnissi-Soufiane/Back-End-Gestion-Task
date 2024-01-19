@@ -1,0 +1,34 @@
+﻿    @model IEnumerable<WebApplication1.Models.Task>
+
+    @{
+        ViewBag.Title = "Index";
+    }
+
+    <h2 style="margin-left:310px">Tâches</h2>
+    @foreach (var item in Model)
+    {
+        <div class="row" style="margin-left: 40px;width: 130%;">
+            <div class="col-md-7 mt-4">
+                <div class="card">
+                    <div class="card-header pb-0 px-3">
+                        <h6 class="mb-0" style="margin-left:30px">@Html.DisplayFor(modelItem => item.projet.Titre)</h6>
+                    </div>
+                    <div class="card-body pt-4 p-3">
+                        <ul class="list-group">
+                            <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-3 text-sm">@Html.DisplayFor(modelItem => item.memebre.Nom) @Html.DisplayFor(modelItem => item.memebre.Prenom)</h6>
+                                    <span class="mb-2 text-xs">Durée : <span class="text-dark font-weight-bold ms-sm-2">@Html.DisplayFor(modelItem => item.Duree) j</span></span>  
+                                    <span class="mb-2 text-xs">Description :<span class="text-dark font-weight-bold ms-sm-2">@Html.DisplayFor(modelItem => item.Descriptiont)</span></span>
+                                </div>
+                                <div class="ms-auto text-end">
+                                    <a class="btn btn-link text-success text-gradient px-3 mb-0" href="javascript:;"><i class="material-icons text-sm me-2">check_circle</i>@Html.ActionLink("Fiat", "Edit", new { id = item.IdT })</a>
+                                    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="material-icons text-sm me-2">visibility</i>@Html.ActionLink("Voir", "Details", new { id = item.IdT })</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        }

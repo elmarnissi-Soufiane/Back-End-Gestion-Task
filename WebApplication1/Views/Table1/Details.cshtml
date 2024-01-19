@@ -1,0 +1,58 @@
+﻿@model WebApplication1.Models.projet
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>projet</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Proprie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Proprie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Progression)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Progression)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdP }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

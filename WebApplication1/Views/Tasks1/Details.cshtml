@@ -1,0 +1,147 @@
+﻿@model WebApplication1.Models.Task
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="margin-left:340px">Détails</h2>
+    <main class="main-content  mt-0">
+        <div class="card card-plain" style="width: 60%;margin-left: 140px;">
+            <div class="card-body" style="background-color: gainsboro ;">
+                <form role="form">
+                    <div class="input-group input-group-outline mb-3 " style="background-color: ;">
+                        @Html.DisplayFor(model => model.memebre.Nom, new { @class = "form-control" })
+                        @Html.DisplayFor(model => model.memebre.Prenom, new { @class = "form-control" })
+                        <style>
+                            /* CSS styles for the 'form-control' class */
+                            .form-control {
+                                /* Add your styles here */
+                                border: 1px solid #ccc;
+                                padding: 5px;
+                                /* Other styles */
+                            }
+
+                            /* CSS styles for the 'custom-editor' class */
+                            .custom-editor {
+                                /* Add your styles here */
+                                background-color: #f0f0f0;
+                                color: #333;
+                                /* Other styles */
+                            }
+                        </style>
+                    </div>
+                    <div class="input-group input-group-outline mb-3 " style="background-color: whitesmoke;">
+                        @Html.DisplayFor(model => model.Descriptiont, new { @class = "form-control" })  
+                        <style>
+                            /* CSS styles for the 'form-control' class */
+                            .form-control {
+                                /* Add your styles here */
+                                border: 1px solid #ccc;
+                                padding: 5px;
+                                /* Other styles */
+                            }
+
+                            /* CSS styles for the 'custom-editor' class */
+                            .custom-editor {
+                                /* Add your styles here */
+                                background-color: #f0f0f0;
+                                color: #333;
+                                /* Other styles */
+                            }
+                        </style>
+                    </div>
+                    <div class="input-group input-group-outline mb-3 " style="background-color: whitesmoke;">
+                        @Html.DisplayFor(model => model.Duree, new { @class = "form-control" }) j
+                        <style>
+                            /* CSS styles for the 'form-control' class */
+                            .form-control {
+                                /* Add your styles here */
+                                border: 1px solid #ccc;
+                                padding: 5px;
+                                /* Other styles */
+                            }
+
+                            /* CSS styles for the 'custom-editor' class */
+                            .custom-editor {
+                                /* Add your styles here */
+                                background-color: #f0f0f0;
+                                color: #333;
+                                /* Other styles */
+                            }
+                        </style>
+                    </div>
+                    @*<div class="input-group input-group-outline mb-3 " style="background-color: whitesmoke;">
+            @Html.EditorFor(model => model.Statu, new { htmlAttributes = new { @class = "form-control custom-editor" } })
+            @Html.ValidationMessageFor(model => model.Statu, "", new { @class = "text-danger custom-validation-message" })
+            <style>
+                /* CSS styles for the 'form-control' class */
+                .form-control {
+                    /* Add your styles here */
+                    border: 1px solid #ccc;
+                    padding: 5px;
+                    /* Other styles */
+                }
+
+                /* CSS styles for the 'custom-editor' class */
+                .custom-editor {
+                    /* Add your styles here */
+                    background-color: #f0f0f0;
+                    color: #333;
+                    /* Other styles */
+                }
+            </style>
+            <label class="form-label">Statu de tache</label>
+        </div>*@
+                    <div class="input-group input-group-outline mb-3" style="background-color: whitesmoke;">
+                        @Html.DisplayFor(model => model.Statu)
+                        <style>
+                            /* CSS styles for the 'form-control' class */
+                            .form-control {
+                                /* Add your styles here */
+                                border: 1px solid #ccc;
+                                padding: 5px;
+                                /* Other styles */
+                            }
+
+                            /* CSS styles for the 'custom-editor' class */
+                            .custom-editor {
+                                /* Add your styles here */
+                                background-color: #f0f0f0;
+                                color: #333;
+                                /* Other styles */
+                            }
+                        </style>
+                    </div>
+                    <div class="input-group input-group-outline mb-3 " style="background-color: whitesmoke;">
+                        @Html.DisplayFor(model => model.projet.Titre)
+                        @Html.ValidationMessageFor(model => model.projet.Titre, "", new { @class = "text-danger" })
+                        <style>
+                            /* CSS styles for the 'form-control' class */
+                            .form-control {
+                                /* Add your styles here */
+                                border: 1px solid #ccc;
+                                padding: 5px;
+                                /* Other styles */
+                            }
+
+                            /* CSS styles for the 'custom-editor' class */
+                            .custom-editor {
+                                /* Add your styles here */
+                                background-color: #f0f0f0;
+                                color: #333;
+                                /* Other styles */
+                            }
+                        </style>
+                    </div>
+                </form>
+                <a class="nav-link text-white " href="~/Tache/Index">
+                    <div class="btn btn-lg bg-gradient-primary btn-lg w-50 mt-4 mb-0" style="margin-left:120px">
+                        <span>Retourner</span>
+                    </div>
+                    <div class="btn btn-lg bg-gradient-primary btn-lg w-50 mt-4 mb-0" style="margin-left:120px">
+                        <span>Supprimer</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </main>
